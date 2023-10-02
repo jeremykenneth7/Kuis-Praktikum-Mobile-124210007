@@ -164,24 +164,17 @@ class DetailPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                ElevatedButton(
-                  onPressed: (){
-                    launchUrl(Uri.parse(place.imgUrls));
-                  },
-                  style: ElevatedButton.styleFrom(
-                    shape: const CircleBorder(), //<-- SEE HERE
-                    padding: const EdgeInsets.all(20),
-                  ),
-                  child: const Icon(
-                    //<-- SEE HERE
-                    Icons.image,
-                    color: Colors.white,
-                    size: 20,
-                  ),
-                ),
+               
               ],
             )
           ],
-        ));
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            launchUrl(Uri.parse(place.imgUrls));
+          },
+          child: const Icon(Icons.image),
+          backgroundColor: Colors.green)
+        );
   }
 }
